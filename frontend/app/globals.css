@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: theme("colors.paper");
+  color: theme("colors.ink");
+}
+
+/* Split-flap board flip-in, used by the AgentBoard component */
+@keyframes flip-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px) scaleY(0.85);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(1px) scaleY(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+.animate-flip-in {
+  animation: flip-in 320ms ease-out forwards;
+}
+
+/* Fade-up entry for dashboard cards and chat bubbles */
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 400ms ease-out forwards;
+}
+
+/* Shimmer loading effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    theme("colors.ink/5") 25%,
+    theme("colors.ink/10") 50%,
+    theme("colors.ink/5") 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-flip-in,
+  .animate-fade-up {
+    animation: none;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid theme("colors.runway");
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar for chat */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 4px;
+}
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: transparent;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: theme("colors.ink/15");
+  border-radius: 2px;
+}
