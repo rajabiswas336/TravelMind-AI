@@ -4,8 +4,7 @@ An agentic travel planning and booking platform. Describe your trip in plain lan
 
 ## Live Demo
 
-> **Frontend**: https://travelmind-ai.vercel.app  
-> **API**: https://travelmind-ai-backend.railway.app
+> 🔗 Coming soon — links will be updated after deployment
 
 ---
 
