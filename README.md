@@ -4,7 +4,9 @@ An agentic travel planning and booking platform. Describe your trip in plain lan
 
 ## Live Demo
 
-> 🔗 Coming soon — links will be updated after deployment
+> 🔗 **[Live Demo — travelmind-tawny.vercel.app](https://travelmind-tawny.vercel.app)**
+>
+> Backend API: [travelmind-ai-backend.onrender.com](https://travelmind-ai-backend.onrender.com/health)
 
 ---
 
