@@ -12,11 +12,14 @@ load_dotenv()
 
 app = FastAPI(title="TravelMind AI API", version="0.3.0")
 
-origins = os.getenv("CORS_ORIGINS", "http://localhost:3000").split(",")
+raw_origins = os.getenv("CORS_ORIGINS", "*").split(",")
+origins = [o.strip() for o in raw_origins if o.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
+    allow_origins=origins if "*" not in origins else ["*"],
+    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_credentials=False if "*" in origins else True,
     allow_methods=["*"],
     allow_headers=["*"],
 )

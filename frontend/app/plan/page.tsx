@@ -16,7 +16,7 @@ import {
   CabBookingConfirmation,
 } from "@/lib/types";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://travelmind-ai-backend.onrender.com";
 
 const AGENT_SEQUENCE = [
   "DESTINATION AGENT — SCANNING",
